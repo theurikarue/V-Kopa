@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { PageHeader } from "@/components/shell/merchant-shell";
-import { LockBadge } from "../dashboard/page";
+import { LockBadge } from "@/components/ui/lock-badge";
 import { cn } from "@/lib/utils";
 import { formatKES, prettyMsisdn } from "@/lib/hp";
 import { CUSTOMERS } from "@/lib/mock-data";

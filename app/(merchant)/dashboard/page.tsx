@@ -12,6 +12,8 @@ import { formatKES, prettyMsisdn } from "@/lib/hp";
 import {
   BRANCH_METRICS as M, COLLECTION_TREND, CUSTOMERS, RECENT_ACTIVITY,
 } from "@/lib/mock-data";
+import { LockBadge } from "@/components/ui/lock-badge";
+
 
 export default function DashboardPage() {
   const arrears = CUSTOMERS.filter((c) => c.status === "arrears").sort(
@@ -224,29 +226,5 @@ function EstateRow({
       <dt className="min-w-0 flex-1 text-sm text-muted-foreground">{label}</dt>
       <dd className="font-semibold tnum">{value}</dd>
     </div>
-  );
-}
-
-function LockBadge({ state }: { state: string }) {
-  if (state === "locked")
-    return (
-      <Badge className="border-transparent bg-[hsl(var(--arrears))]/12 font-normal text-[hsl(var(--arrears))] hover:bg-[hsl(var(--arrears))]/12">
-        <Lock className="mr-1 size-3" />
-        Locked
-      </Badge>
-    );
-  if (state === "lock_blocked")
-    return (
-      <Badge className="border-transparent bg-[hsl(var(--statute))]/12 font-normal text-[hsl(var(--statute))] hover:bg-[hsl(var(--statute))]/12">
-        <ShieldCheck className="mr-1 size-3" />
-        Lock retired
-      </Badge>
-    );
-  if (state === "released")
-    return <Badge variant="secondary" className="font-normal">Owned outright</Badge>;
-  return (
-    <Badge className="border-transparent bg-[hsl(var(--mpesa))]/12 font-normal text-[hsl(var(--mpesa))] hover:bg-[hsl(var(--mpesa))]/12">
-      Active
-    </Badge>
   );
 }
