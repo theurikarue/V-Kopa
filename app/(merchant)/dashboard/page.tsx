@@ -227,7 +227,7 @@ function EstateRow({
   );
 }
 
-export function LockBadge({ state }: { state: string }) {
+function LockBadge({ state }: { state: string }) {
   if (state === "locked")
     return (
       <Badge className="border-transparent bg-[hsl(var(--arrears))]/12 font-normal text-[hsl(var(--arrears))] hover:bg-[hsl(var(--arrears))]/12">
